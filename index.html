@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menampilkan Google Sheet</title>
     <!-- Link ke TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
     <style>
-        /* Custom styles for better responsiveness */
-        @media (max-width: 640px) {
-            h1 {
-                font-size: 1.5rem; /* Adjust font size for small screens */
-            }
+      /* Custom styles for better responsiveness */
+      @media (max-width: 640px) {
+        h1 {
+          font-size: 1.5rem; /* Adjust font size for small screens */
         }
-    </style>
-</head>
-<body class="bg-gray-100 m-0 h-screen">
-    <!-- Kontainer utama dengan margin 7% dari setiap sisi -->
-    <div class="relative w-full h-full p-[7vw] flex flex-col items-center justify-center">
-        <h1 class="text-3xl font-bold text-white z-10 mb-4 text-center">
-        </h1>
+        .iframe-container {
+          height: 60vh; /* Set a fixed height for smaller screens */
+        }
+      }
 
-        <!-- Iframe yang memenuhi kontainer setelah margin -->
-        <div class="relative w-full h-full bg-white shadow-lg rounded-lg overflow-hidden">
-            <iframe
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTksRd1uST4adTVqQ7nUeqApZTPH1lole7cPIIqnMPblYUJgSAnd2Jihpel_mTT6SE5PtBK8vnqnuwz/pubhtml"
-                class="absolute top-0 left-0 w-full h-full"
-                frameborder="0"
-                allowfullscreen
-            ></iframe>
-        </div>
+      @media (min-width: 641px) {
+        .iframe-container {
+          height: 100vh; /* Fullscreen height for larger screens */
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 m-0 h-screen">
+    <!-- Kontainer utama dengan margin yang lebih seimbang -->
+    <div
+      class="relative w-full h-full p-2 md:p-4 flex flex-col items-center justify-center"
+    >
+      <h1 class="text-3xl font-bold text-black z-10 mb-2 text-center">
+        Cek Kelengkapan Data
+      </h1>
+
+      <!-- Iframe container -->
+      <div
+        class="relative w-full iframe-container bg-white shadow-lg rounded-lg overflow-hidden"
+      >
+        <iframe
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTksRd1uST4adTVqQ7nUeqApZTPH1lole7cPIIqnMPblYUJgSAnd2Jihpel_mTT6SE5PtBK8vnqnuwz/pubhtml"
+          class="absolute top-0 left-0 w-full h-full"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
-</body>
+  </body>
 </html>

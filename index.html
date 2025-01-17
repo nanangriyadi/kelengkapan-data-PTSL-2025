@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menampilkan Google Sheet</title>
+    <!-- Link ke TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+  </head>
+  <body class="bg-gray-100 m-0 h-screen">
+    <!-- Kontainer utama dengan margin 7% dari setiap sisi -->
+    <div class="relative w-full h-full p-[7vw]">
+      <h1
+        class="absolute top-4 left-1/2 transform -translate-x-1/2 text-3xl font-bold text-white z-10"
+      ></h1>
+
+      <!-- Iframe yang memenuhi kontainer setelah margin -->
+      <iframe
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTksRd1uST4adTVqQ7nUeqApZTPH1lole7cPIIqnMPblYUJgSAnd2Jihpel_mTT6SE5PtBK8vnqnuwz/pubhtml"
+        class="absolute top-0 left-0 w-full h-full"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </body>
+</html>
